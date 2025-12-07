@@ -1,0 +1,17 @@
+{
+    "name": "Game.Visual",
+    "rootNamespace": "",
+    "references": [
+        "GUID:7025dd5a681a87a469059372e221a7b0",
+        "GUID:1932c5925f7c1214580a094e1e77a561"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
