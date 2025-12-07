@@ -1,7 +1,7 @@
 using UnityEngine;
 using Zenject;
 using Game.Core.Events;
-using Game.Core.Bootstrap;
+using Game.Core.Feature;
 
 namespace Game.Core.Installers
 {

@@ -7,7 +7,7 @@ namespace Game.Domain
     /// <summary>
     /// Default domain implementation of the player entity.
     /// </summary>
-    public sealed class Player : IPlayer
+    public sealed class Player : IPlayer, IPlayerInitializable
     {
         private int _health;
         private int _lives;
@@ -29,7 +29,7 @@ namespace Game.Domain
         /// <summary>
         /// Method for assigning the initial player state.
         /// </summary>
-        internal void Initialize(int health, int lives, string nickname, IEnumerable<string> skills)
+        public void InitializeState(int health, int lives, string nickname, IEnumerable<string> skills)
         {
             _health = Math.Max(0, health);
             _lives = Math.Max(0, lives);
