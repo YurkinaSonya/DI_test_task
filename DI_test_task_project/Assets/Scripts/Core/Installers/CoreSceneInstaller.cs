@@ -1,6 +1,7 @@
 using UnityEngine;
 using Zenject;
 using Game.Core.Events;
+using Game.Core.Bootstrap;
 
 namespace Game.Core.Installers
 {
@@ -14,6 +15,12 @@ namespace Game.Core.Installers
 
         public override void InstallBindings()
         {
+            //Bootstrapper for initializable in-game objects
+            Container.BindInterfacesAndSelfTo<GameBootstrapper>()
+                .AsSingle()
+                .NonLazy();
+
+            //in-scene services
             if (_sceneServices == null) return;
 
             foreach (var service in _sceneServices)
