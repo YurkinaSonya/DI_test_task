@@ -47,7 +47,7 @@ namespace Game.Core.Visual
 
         private void OnPlayerAttributeChanged(PlayerAttributeChangedEvent e)
         {
-            _view.ShowLine($"[ATTR] {e.Attribute} = {e.Value} (by {e.Source})");
+            _view.ShowLine($"[ATTR] {e.Attribute} += {e.Value} (by {e.Source})");
         }
 
         private void OnEquipmentParamsChanged(EquipmentParamsChangedEvent e)
