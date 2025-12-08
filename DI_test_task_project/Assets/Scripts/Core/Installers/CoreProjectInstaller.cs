@@ -1,7 +1,6 @@
 using UnityEngine;
 using Zenject;
 using Game.Core.Events;
-using Game.Core.Feature;
 
 namespace Game.Core.Installers
 {
@@ -28,11 +27,6 @@ namespace Game.Core.Installers
             //Event system
             Container.Bind<IEventAggregator>()
                 .To<EventAggregator>()
-                .AsSingle()
-                .NonLazy();
-
-            //Bootstrapper for initializable in-game objects
-            Container.BindInterfacesAndSelfTo<GameBootstrapper>()
                 .AsSingle()
                 .NonLazy();
         }
