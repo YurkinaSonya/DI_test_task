@@ -33,13 +33,7 @@ namespace Game.Core.Feature.Player
                 .AsSingle();
 
             //Player
-            Container.Bind<IPlayer>()
-                .To<Domain.Player>()
-                .AsSingle();
-
-            Container.Bind<IPlayerInitializable>()
-                .To<Domain.Player>()
-                .FromResolve()
+            Container.BindInterfacesAndSelfTo<Domain.Player>()
                 .AsSingle();
             
             //Feature initialization

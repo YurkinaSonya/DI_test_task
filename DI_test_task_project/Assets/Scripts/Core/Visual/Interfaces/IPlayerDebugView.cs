@@ -1,4 +1,4 @@
-namespace Game.Visual
+namespace Game.Core.Visual
 {
     /// <summary>
     /// Defines a debug surface for player-related events.

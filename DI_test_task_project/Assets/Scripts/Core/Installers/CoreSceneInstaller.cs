@@ -27,7 +27,7 @@ namespace Game.Core.Installers
             {
                 if (service == null) continue;
 
-                Container.Bind(service.GetType()) //casual binding of in-scene services.
+                Container.BindInterfacesAndSelfTo(service.GetType())
                     .FromInstance(service)
                     .AsSingle();
             }

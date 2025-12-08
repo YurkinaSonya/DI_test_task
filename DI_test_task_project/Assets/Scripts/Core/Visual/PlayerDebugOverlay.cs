@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Game.Visual
+namespace Game.Core.Visual
 {
     /// <summary>
     /// A tiny on-screen debug overlay.

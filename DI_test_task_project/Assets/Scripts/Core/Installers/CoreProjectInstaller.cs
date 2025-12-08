@@ -1,6 +1,7 @@
 using UnityEngine;
 using Zenject;
 using Game.Core.Events;
+using Game.Core.Visual;
 
 namespace Game.Core.Installers
 {
@@ -12,6 +13,9 @@ namespace Game.Core.Installers
     {
         [Header("Optional Scene Services")]
         [SerializeField] private CoroutineRunner _coroutineRunner;
+
+        [Header("Debug Presentation")]
+        [SerializeField] private PlayerDebugOverlay _debugOverlay;
 
         public override void InstallBindings()
         {
@@ -29,6 +33,19 @@ namespace Game.Core.Installers
                 .To<EventAggregator>()
                 .AsSingle()
                 .NonLazy();
+
+            //Debug
+            if (_debugOverlay != null)
+            {
+                Container.Bind<IPlayerDebugView>()
+                    .FromInstance(_debugOverlay)
+                    .AsSingle()
+                    .NonLazy();
+
+                Container.BindInterfacesAndSelfTo<PlayerDebugPresenter>()
+                    .AsSingle()
+                    .NonLazy();
+            }
         }
     }
 }
